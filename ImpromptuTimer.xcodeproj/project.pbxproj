@@ -1,0 +1,338 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		508FF8DA14A52BFE00DE03A1 /* iconBig.png in Resources */ = {isa = PBXBuildFile; fileRef = 508FF8D914A52BFE00DE03A1 /* iconBig.png */; };
+		508FF8DF14A53AC300DE03A1 /* PSDTesting.png in Resources */ = {isa = PBXBuildFile; fileRef = 508FF8DE14A53AC300DE03A1 /* PSDTesting.png */; };
+		508FF8E114A53C6C00DE03A1 /* PSi-114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = 508FF8E014A53C6C00DE03A1 /* PSi-114x114.png */; };
+		509697D014B8DD8E00C04F81 /* dark_leather.png in Resources */ = {isa = PBXBuildFile; fileRef = 509697CF14B8DD8E00C04F81 /* dark_leather.png */; };
+		509697D614B8E5E900C04F81 /* Normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 509697D514B8E5E800C04F81 /* Normal.png */; };
+		50B43E5D14957F7E003EC832 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B43E5C14957F7E003EC832 /* UIKit.framework */; };
+		50B43E5F14957F7E003EC832 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B43E5E14957F7E003EC832 /* Foundation.framework */; };
+		50B43E6114957F7E003EC832 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B43E6014957F7E003EC832 /* CoreGraphics.framework */; };
+		50B43E6714957F7E003EC832 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 50B43E6514957F7E003EC832 /* InfoPlist.strings */; };
+		50B43E6914957F7E003EC832 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B43E6814957F7E003EC832 /* main.m */; };
+		50B43E6D14957F7F003EC832 /* ImpromptuTimerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B43E6C14957F7F003EC832 /* ImpromptuTimerAppDelegate.m */; };
+		50B43E7014957F7F003EC832 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50B43E6E14957F7F003EC832 /* MainStoryboard.storyboard */; };
+		50B43E7314957F7F003EC832 /* ImpromptuTimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B43E7214957F7F003EC832 /* ImpromptuTimerViewController.m */; };
+		50B43E7B149591B0003EC832 /* TimerBrain.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B43E7A149591B0003EC832 /* TimerBrain.m */; };
+		50B43EAA1497C3B1003EC832 /* QuoteBrain.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B43EA91497C3B1003EC832 /* QuoteBrain.m */; };
+		50B43EAC149989FB003EC832 /* arment.png in Resources */ = {isa = PBXBuildFile; fileRef = 50B43EAB149989FA003EC832 /* arment.png */; };
+		50B43EAE149D42FF003EC832 /* Wood 512.png in Resources */ = {isa = PBXBuildFile; fileRef = 50B43EAD149D42FF003EC832 /* Wood 512.png */; };
+		50B43EB8149D9571003EC832 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B43EB7149D9571003EC832 /* QuartzCore.framework */; };
+		50B43EE814A06AC1003EC832 /* startTest.png in Resources */ = {isa = PBXBuildFile; fileRef = 50B43EE714A06AC1003EC832 /* startTest.png */; };
+		50B43EEA14A06CC0003EC832 /* red.png in Resources */ = {isa = PBXBuildFile; fileRef = 50B43EE914A06CC0003EC832 /* red.png */; };
+		50B43F1314A52AFE003EC832 /* iconBig.png in Resources */ = {isa = PBXBuildFile; fileRef = 50B43F1214A52AFE003EC832 /* iconBig.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		508FF8D914A52BFE00DE03A1 /* iconBig.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconBig.png; sourceTree = "<group>"; };
+		508FF8DE14A53AC300DE03A1 /* PSDTesting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PSDTesting.png; sourceTree = "<group>"; };
+		508FF8E014A53C6C00DE03A1 /* PSi-114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PSi-114x114.png"; sourceTree = "<group>"; };
+		509697CF14B8DD8E00C04F81 /* dark_leather.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dark_leather.png; path = ../../../Downloads/dark_leather.png; sourceTree = "<group>"; };
+		509697D514B8E5E800C04F81 /* Normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Normal.png; path = ../../../Documents/Buttons/Normal.png; sourceTree = "<group>"; };
+		50B43E5814957F7E003EC832 /* ImpromptuTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImpromptuTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		50B43E5C14957F7E003EC832 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		50B43E5E14957F7E003EC832 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		50B43E6014957F7E003EC832 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		50B43E6414957F7E003EC832 /* ImpromptuTimer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ImpromptuTimer-Info.plist"; sourceTree = "<group>"; };
+		50B43E6614957F7E003EC832 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		50B43E6814957F7E003EC832 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		50B43E6A14957F7E003EC832 /* ImpromptuTimer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ImpromptuTimer-Prefix.pch"; sourceTree = "<group>"; };
+		50B43E6B14957F7F003EC832 /* ImpromptuTimerAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImpromptuTimerAppDelegate.h; sourceTree = "<group>"; };
+		50B43E6C14957F7F003EC832 /* ImpromptuTimerAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImpromptuTimerAppDelegate.m; sourceTree = "<group>"; };
+		50B43E6F14957F7F003EC832 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		50B43E7114957F7F003EC832 /* ImpromptuTimerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImpromptuTimerViewController.h; sourceTree = "<group>"; };
+		50B43E7214957F7F003EC832 /* ImpromptuTimerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImpromptuTimerViewController.m; sourceTree = "<group>"; };
+		50B43E79149591B0003EC832 /* TimerBrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerBrain.h; sourceTree = "<group>"; };
+		50B43E7A149591B0003EC832 /* TimerBrain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerBrain.m; sourceTree = "<group>"; };
+		50B43EA81497C3B1003EC832 /* QuoteBrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteBrain.h; sourceTree = "<group>"; };
+		50B43EA91497C3B1003EC832 /* QuoteBrain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteBrain.m; sourceTree = "<group>"; };
+		50B43EAB149989FA003EC832 /* arment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arment.png; sourceTree = "<group>"; };
+		50B43EAD149D42FF003EC832 /* Wood 512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Wood 512.png"; sourceTree = "<group>"; };
+		50B43EB7149D9571003EC832 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		50B43EE714A06AC1003EC832 /* startTest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = startTest.png; path = ../../../Documents/startTest.png; sourceTree = "<group>"; };
+		50B43EE914A06CC0003EC832 /* red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = red.png; path = ../../../Documents/red.png; sourceTree = "<group>"; };
+		50B43F1214A52AFE003EC832 /* iconBig.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconBig.png; path = ../../../Documents/Icons/iconBig.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		50B43E5514957F7E003EC832 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50B43EB8149D9571003EC832 /* QuartzCore.framework in Frameworks */,
+				50B43E5D14957F7E003EC832 /* UIKit.framework in Frameworks */,
+				50B43E5F14957F7E003EC832 /* Foundation.framework in Frameworks */,
+				50B43E6114957F7E003EC832 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		50B43E4D14957F7D003EC832 = {
+			isa = PBXGroup;
+			children = (
+				508FF8E014A53C6C00DE03A1 /* PSi-114x114.png */,
+				508FF8DE14A53AC300DE03A1 /* PSDTesting.png */,
+				508FF8D914A52BFE00DE03A1 /* iconBig.png */,
+				50B43EB7149D9571003EC832 /* QuartzCore.framework */,
+				50B43E6214957F7E003EC832 /* ImpromptuTimer */,
+				50B43E5B14957F7E003EC832 /* Frameworks */,
+				50B43E5914957F7E003EC832 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		50B43E5914957F7E003EC832 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				50B43E5814957F7E003EC832 /* ImpromptuTimer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		50B43E5B14957F7E003EC832 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				50B43E5C14957F7E003EC832 /* UIKit.framework */,
+				50B43E5E14957F7E003EC832 /* Foundation.framework */,
+				50B43E6014957F7E003EC832 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		50B43E6214957F7E003EC832 /* ImpromptuTimer */ = {
+			isa = PBXGroup;
+			children = (
+				50B43E6B14957F7F003EC832 /* ImpromptuTimerAppDelegate.h */,
+				50B43E6C14957F7F003EC832 /* ImpromptuTimerAppDelegate.m */,
+				50B43E6E14957F7F003EC832 /* MainStoryboard.storyboard */,
+				50B43E79149591B0003EC832 /* TimerBrain.h */,
+				50B43E7A149591B0003EC832 /* TimerBrain.m */,
+				50B43E7114957F7F003EC832 /* ImpromptuTimerViewController.h */,
+				50B43E7214957F7F003EC832 /* ImpromptuTimerViewController.m */,
+				50B43EA81497C3B1003EC832 /* QuoteBrain.h */,
+				50B43EA91497C3B1003EC832 /* QuoteBrain.m */,
+				50B43EAB149989FA003EC832 /* arment.png */,
+				50B43EAD149D42FF003EC832 /* Wood 512.png */,
+				50B43EE914A06CC0003EC832 /* red.png */,
+				50B43EE714A06AC1003EC832 /* startTest.png */,
+				50B43F1214A52AFE003EC832 /* iconBig.png */,
+				509697D514B8E5E800C04F81 /* Normal.png */,
+				509697CF14B8DD8E00C04F81 /* dark_leather.png */,
+				50B43E6314957F7E003EC832 /* Supporting Files */,
+			);
+			path = ImpromptuTimer;
+			sourceTree = "<group>";
+		};
+		50B43E6314957F7E003EC832 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				50B43E6414957F7E003EC832 /* ImpromptuTimer-Info.plist */,
+				50B43E6514957F7E003EC832 /* InfoPlist.strings */,
+				50B43E6814957F7E003EC832 /* main.m */,
+				50B43E6A14957F7E003EC832 /* ImpromptuTimer-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		50B43E5714957F7E003EC832 /* ImpromptuTimer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50B43E7614957F7F003EC832 /* Build configuration list for PBXNativeTarget "ImpromptuTimer" */;
+			buildPhases = (
+				50B43E5414957F7E003EC832 /* Sources */,
+				50B43E5514957F7E003EC832 /* Frameworks */,
+				50B43E5614957F7E003EC832 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ImpromptuTimer;
+			productName = ImpromptuTimer;
+			productReference = 50B43E5814957F7E003EC832 /* ImpromptuTimer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		50B43E4F14957F7E003EC832 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 50B43E5214957F7E003EC832 /* Build configuration list for PBXProject "ImpromptuTimer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 50B43E4D14957F7D003EC832;
+			productRefGroup = 50B43E5914957F7E003EC832 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				50B43E5714957F7E003EC832 /* ImpromptuTimer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		50B43E5614957F7E003EC832 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50B43E6714957F7E003EC832 /* InfoPlist.strings in Resources */,
+				50B43E7014957F7F003EC832 /* MainStoryboard.storyboard in Resources */,
+				50B43EAC149989FB003EC832 /* arment.png in Resources */,
+				50B43EAE149D42FF003EC832 /* Wood 512.png in Resources */,
+				50B43EE814A06AC1003EC832 /* startTest.png in Resources */,
+				50B43EEA14A06CC0003EC832 /* red.png in Resources */,
+				50B43F1314A52AFE003EC832 /* iconBig.png in Resources */,
+				508FF8DA14A52BFE00DE03A1 /* iconBig.png in Resources */,
+				508FF8DF14A53AC300DE03A1 /* PSDTesting.png in Resources */,
+				508FF8E114A53C6C00DE03A1 /* PSi-114x114.png in Resources */,
+				509697D014B8DD8E00C04F81 /* dark_leather.png in Resources */,
+				509697D614B8E5E900C04F81 /* Normal.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		50B43E5414957F7E003EC832 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50B43E6914957F7E003EC832 /* main.m in Sources */,
+				50B43E6D14957F7F003EC832 /* ImpromptuTimerAppDelegate.m in Sources */,
+				50B43E7314957F7F003EC832 /* ImpromptuTimerViewController.m in Sources */,
+				50B43E7B149591B0003EC832 /* TimerBrain.m in Sources */,
+				50B43EAA1497C3B1003EC832 /* QuoteBrain.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		50B43E6514957F7E003EC832 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				50B43E6614957F7E003EC832 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		50B43E6E14957F7F003EC832 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				50B43E6F14957F7F003EC832 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		50B43E7414957F7F003EC832 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		50B43E7514957F7F003EC832 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		50B43E7714957F7F003EC832 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ImpromptuTimer/ImpromptuTimer-Prefix.pch";
+				INFOPLIST_FILE = "ImpromptuTimer/ImpromptuTimer-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		50B43E7814957F7F003EC832 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ImpromptuTimer/ImpromptuTimer-Prefix.pch";
+				INFOPLIST_FILE = "ImpromptuTimer/ImpromptuTimer-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		50B43E5214957F7E003EC832 /* Build configuration list for PBXProject "ImpromptuTimer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50B43E7414957F7F003EC832 /* Debug */,
+				50B43E7514957F7F003EC832 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		50B43E7614957F7F003EC832 /* Build configuration list for PBXNativeTarget "ImpromptuTimer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50B43E7714957F7F003EC832 /* Debug */,
+				50B43E7814957F7F003EC832 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 50B43E4F14957F7E003EC832 /* Project object */;
+}
