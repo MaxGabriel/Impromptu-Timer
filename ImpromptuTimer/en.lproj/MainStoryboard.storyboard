@@ -120,7 +120,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Normal.png" width="162" height="48"/>
+        <image name="Normal.png" width="161" height="47"/>
         <image name="startTest.png" width="123" height="44"/>
     </resources>
     <classes>
