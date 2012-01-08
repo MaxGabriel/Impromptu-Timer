@@ -18,7 +18,11 @@
 @synthesize endPrepButton = _endPrepButton;
 @synthesize background = _background;
 @synthesize quoteField = _quoteField;
+@synthesize whiteLine = _whiteLine;
 
+
+//I think a better way to display the time when counting down is to do the math. 
+//Benefit of this is that I can still show the total time. 
 
 - (void) increaseTimerCount
 {
@@ -47,19 +51,30 @@
     }
 }
 
+//This Button needs to switch between Start/Stop functionality, to mimic the familiar functionality of the native stopwatch
 - (IBAction)startTimer:(id)sender
 {
     if (timerGoing == NO) {
+        
         timerStarted = YES;
         timerGoing = YES;
         [self updateButtons];
-        //[stopButton setTitle:@"RTN TO ZERO" forState:UIControlStateNormal];
+
+        //Switch to Stop Button Display
         [_startStopButton setTitle:@"Stop" forState:UIControlStateNormal];
         [_startStopButton setBackgroundImage:[UIImage imageNamed:@"red.png"] forState: UIControlStateNormal];
+        
+        //Start Time
         _timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(increaseTimerCount) userInfo:nil repeats:YES];
-    } else if (timerGoing == YES) {
+    } 
+    
+    else if (timerGoing == YES) {
+        
+        //Switch to Start Button Display
         [_startStopButton setTitle:@"Start" forState:UIControlStateNormal];
         [_startStopButton setBackgroundImage:[UIImage imageNamed:@"startTest.png"] forState: UIControlStateNormal];
+        
+        //Stop Timer
         timerGoing = NO;
         [_timer invalidate];
         NSLog(@"stopping timer");
@@ -104,7 +119,7 @@
 }
 
 
-//this needs to enable the reset button
+//This button ends "Prep Time" (counting up, by convention) and immediately enters "Speaking Time" (counting down, by convention). 
 - (IBAction)endPrep:(id)sender
 {
     if (inPrep == YES) {
@@ -113,20 +128,34 @@
         inPrep = NO;
         [self updateButtons];
         countUp = NO;
-        speechTimeInMin = 7;
+        
+        //Because we shift from counting down to counting up, we need to calculate the new value for display
+        // 2 minutes of prep used -> 5 minutes of speaking time left
+        
+        speechTimeInMin = 7; 
         int speechTimeInSeconds = (speechTimeInMin*60);
-        _prepDisplay.text = _timeLabel.text;
+//        _prepDisplay.text = _timeLabel.text;        // Pretty sure this is unncessary
         timerCount = speechTimeInSeconds - timerCount;
         _timeLabel.text = [brain convertSecondsToDisplay:timerCount];
+        
+        //Disable "End Prep" Button
         _endPrepButton.titleLabel.alpha = .5;
         _endPrepButton.enabled = NO;
+        
+        
+        //As of now, total time is always 7 minutes, but upcoming rule changes may change total time depending on the round. If this was the case, I would need to add settings features to modify total time. For now this is unncessary. 
     }
     
 }
 
 - (void)addToCounters:(double) value
 {
-    if (timerGoing == YES){
+    
+    // Is the 'int toAdd' really necessary? Pretty sure I don't need it. 
+    
+    // This relates to the updating after home button
+    
+    if (timerGoing == YES) {
         int toAdd = value;
         timerCount += toAdd;
         if (inPrep == YES)
@@ -137,19 +166,15 @@
             speechCount += toAdd;
         }
     }
-    
 }
 
+//Generates a new quotation 
 - (IBAction)newQuote:(id)sender 
 {
-    NSString *quote;
     if (!quoteBrain)
         quoteBrain = [[QuoteBrain alloc] init];
-    
-    quote = [quoteBrain randomQuote];
              
-    _quoteField.text = quote;
-    
+    _quoteField.text = [quoteBrain randomQuote];
 }
 
 
@@ -164,6 +189,7 @@
     [self setEndPrepButton:nil];
     [self setBackground:nil];
     [self setQuoteField:nil];
+    [self setWhiteLine:nil];
     [super viewDidUnload];
 }
 
@@ -175,6 +201,11 @@
     [[_startStopButton layer] setCornerRadius:8.0f];
     [[_startStopButton layer] setMasksToBounds:YES];
     [[_startStopButton layer] setBorderWidth:2.5f];
+    
+    [[_whiteLine layer] setCornerRadius:1.0];
+    [[_whiteLine layer] setMasksToBounds:YES];
+    
+    
     [self newQuote:(@"fix later")];
     countUp = YES;
     inPrep = YES;
@@ -201,6 +232,8 @@
     [super viewWillDisappear:animated];
 }
 
+
+//rename to 'update Reset Button' 
 - (void) updateButtons
 {
     if (timerStarted == YES || inPrep == NO) {

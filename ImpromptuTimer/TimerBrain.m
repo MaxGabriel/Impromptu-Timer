@@ -42,7 +42,7 @@
         two = seconds % 10;
         seconds /= 10;
     }
-    else if (seconds >=60) {   // 1 minute
+    else if (seconds >=60) {    // 1 minute
         three = seconds / 60;
         seconds %= 60;
         one = seconds % 10;
@@ -50,7 +50,7 @@
         two = seconds % 10;
         seconds /= 10;
     } else {
-        one = seconds % 10;
+        one = seconds % 10;     // < 1 minute
         seconds /= 10;
         two = seconds % 10;
         seconds /= 10;

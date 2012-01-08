@@ -101,6 +101,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textView>
+                            <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" image="WhiteLineRounded.png" id="KNZ-6e-i4A">
+                                <rect key="frame" x="220" y="69" width="55" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -113,6 +118,7 @@
                         <outlet property="speakDisplay" destination="HH6-HT-M1U" id="BYe-Xf-3l7"/>
                         <outlet property="startStopButton" destination="lMs-Du-xVB" id="dh6-ZH-ZaX"/>
                         <outlet property="timeLabel" destination="Fib-Rv-eYk" id="dHc-C0-ao3"/>
+                        <outlet property="whiteLine" destination="KNZ-6e-i4A" id="nbT-xI-mrQ"/>
                     </connections>
                 </viewController>
             </objects>
@@ -121,26 +127,9 @@
     </scenes>
     <resources>
         <image name="Normal.png" width="161" height="47"/>
+        <image name="WhiteLineRounded.png" width="50" height="2"/>
         <image name="startTest.png" width="123" height="44"/>
     </resources>
-    <classes>
-        <class className="ImpromptuTimerViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ImpromptuTimerViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="endPrep:"/>
-                <relationship kind="action" name="newQuote:"/>
-                <relationship kind="action" name="startTimer:"/>
-                <relationship kind="outlet" name="background" candidateClass="UIView"/>
-                <relationship kind="outlet" name="endPrepButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="prepDisplay" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="quoteField" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="resetButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="speakDisplay" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="startStopButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

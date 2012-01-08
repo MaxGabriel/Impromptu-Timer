@@ -33,6 +33,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *endPrepButton;
 @property (weak, nonatomic) IBOutlet UIView *background;
 @property (weak, nonatomic) IBOutlet UITextView *quoteField;
+@property (weak, nonatomic) IBOutlet UIImageView *whiteLine;
 
 
 - (void) increaseTimerCount;
