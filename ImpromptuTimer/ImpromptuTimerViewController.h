@@ -15,6 +15,7 @@
 {
     int timerCount;
     int speechCount;
+    int mainDisplayCount;
     int speechTimeInMin;
     BOOL timerStarted;
     BOOL timerGoing;
@@ -34,6 +35,7 @@
 @property (weak, nonatomic) IBOutlet UIView *background;
 @property (weak, nonatomic) IBOutlet UITextView *quoteField;
 @property (weak, nonatomic) IBOutlet UIImageView *whiteLine;
+@property (weak, nonatomic) IBOutlet UILabel *totalTime;
 
 
 - (void) increaseTimerCount;

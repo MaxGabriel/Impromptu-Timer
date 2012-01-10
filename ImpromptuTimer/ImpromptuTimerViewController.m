@@ -9,6 +9,7 @@
 #import "ImpromptuTimerViewController.h"
 
 @implementation ImpromptuTimerViewController
+
 @synthesize timeLabel = _timeLabel;
 @synthesize timer = _timer;
 @synthesize prepDisplay = _prepDisplay;
@@ -19,39 +20,55 @@
 @synthesize background = _background;
 @synthesize quoteField = _quoteField;
 @synthesize whiteLine = _whiteLine;
+@synthesize totalTime = _totalTime;
 
 
 //I think a better way to display the time when counting down is to do the math. 
 //Benefit of this is that I can still show the total time. 
 
+//maybe turn speak time red if it is under 4 minutes?
+
 - (void) increaseTimerCount
 {
+    timerCount += 1;
+    
+    if (!brain)
+        brain = [[TimerBrain alloc] init];
+    
+    speechTimeInMin = 7;
+    
+    int speechTimeInSeconds = (speechTimeInMin*60);
+    
     if (countUp == YES) {
-        timerCount += 1;
-        
+        mainDisplayCount = timerCount;
     } else {
-        timerCount -= 1;
-        if (timerCount == 0) {
+        mainDisplayCount = speechTimeInSeconds - timerCount;
+        
+        if (mainDisplayCount == 0) {
             _timeLabel.textColor = [UIColor redColor];
             _speakDisplay.textColor = [UIColor redColor];
         }
     }
     
-    if (!brain)
-        brain = [[TimerBrain alloc] init];
-    _timeLabel.text = [brain convertSecondsToDisplay:timerCount];
-    
     if (inPrep == YES) {
-        if (timerCount >= 180)
+        _prepDisplay.text = [brain convertSecondsToDisplay:timerCount];
+        if (timerCount >= 180) 
             _prepDisplay.textColor = [UIColor redColor];
-        _prepDisplay.text = _timeLabel.text;
+            
     } else {
         speechCount += 1;
         _speakDisplay.text = [brain convertSecondsToDisplay:speechCount];
     }
+    
+    _timeLabel.text = [brain convertSecondsToDisplay:mainDisplayCount];
+    _totalTime.text = [brain convertSecondsToDisplay:timerCount];
+    
+    //Over 7 minutes
+    if (timerCount >= 420)
+        _totalTime.textColor = [UIColor redColor];
 }
 
-//This Button needs to switch between Start/Stop functionality, to mimic the familiar functionality of the native stopwatch
+//This Button switches between Start/Stop functionality, to mimic the familiar functionality of the native stopwatch
 - (IBAction)startTimer:(id)sender
 {
     if (timerGoing == NO) {
@@ -64,7 +81,7 @@
         [_startStopButton setTitle:@"Stop" forState:UIControlStateNormal];
         [_startStopButton setBackgroundImage:[UIImage imageNamed:@"red.png"] forState: UIControlStateNormal];
         
-        //Start Time
+        //Start timer
         _timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(increaseTimerCount) userInfo:nil repeats:YES];
     } 
     
@@ -94,6 +111,7 @@
 }
 
 
+//handle main display count?
 - (IBAction)resetTimer 
 {
     inPrep = YES;
@@ -105,9 +123,11 @@
     }
     timerCount = 0;
     speechCount = 0;
+    
     _prepDisplay.text = @"00:00";
     _timeLabel.text = @"00:00";
     _speakDisplay.text = @"00:00";
+    _totalTime.text = @"00:00";
     _timeLabel.textColor = [UIColor whiteColor];
     _speakDisplay.textColor = [UIColor whiteColor];
     _prepDisplay.textColor = [UIColor whiteColor];
@@ -135,8 +155,8 @@
         speechTimeInMin = 7; 
         int speechTimeInSeconds = (speechTimeInMin*60);
 //        _prepDisplay.text = _timeLabel.text;        // Pretty sure this is unncessary
-        timerCount = speechTimeInSeconds - timerCount;
-        _timeLabel.text = [brain convertSecondsToDisplay:timerCount];
+        mainDisplayCount = speechTimeInSeconds - timerCount;
+        _timeLabel.text = [brain convertSecondsToDisplay: mainDisplayCount];
         
         //Disable "End Prep" Button
         _endPrepButton.titleLabel.alpha = .5;
@@ -178,9 +198,6 @@
 }
 
 
-
-
-
 - (void)viewDidUnload {
     [self setPrepDisplay:nil];
     [self setSpeakDisplay:nil];
@@ -190,14 +207,17 @@
     [self setBackground:nil];
     [self setQuoteField:nil];
     [self setWhiteLine:nil];
+    [self setTotalTime:nil];
     [super viewDidUnload];
 }
 
+//Apply UI and prepare for use
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
     self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"dark_leather.png"]];
+    
     [[_startStopButton layer] setCornerRadius:8.0f];
     [[_startStopButton layer] setMasksToBounds:YES];
     [[_startStopButton layer] setBorderWidth:2.5f];
@@ -240,13 +260,9 @@
         _resetButton.titleLabel.alpha = 1;
         _resetButton.enabled = YES;
        
-    } else
-    {
+    } else {
             _resetButton.titleLabel.alpha = .5;
             _resetButton.enabled = NO;
-            
-            
-            
     }
 }
 @end
