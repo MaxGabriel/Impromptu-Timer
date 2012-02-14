@@ -8,8 +8,11 @@
 
 #import "ImpromptuTimerAppDelegate.h"
 
+
+
 @implementation ImpromptuTimerAppDelegate
 
+NSString *kApplicationStateDidChange = @"ApplicationStateDidChange";
 
 @synthesize window = _window;
 @synthesize exitTime;
@@ -23,6 +26,7 @@
 							
 - (void)applicationWillResignActive:(UIApplication *)application
 {
+    [[NSNotificationCenter defaultCenter] postNotificationName:kApplicationStateDidChange object:[NSNumber numberWithBool:NO]];
     exitTime = CACurrentMediaTime();
     NSLog(@"App delegate:");
     NSLog(@"%g", exitTime);    
@@ -49,6 +53,7 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
+    [[NSNotificationCenter defaultCenter] postNotificationName:kApplicationStateDidChange object:[NSNumber numberWithBool:YES]];
     if (exitTime != 0) {
         timeSinceExit = (CACurrentMediaTime() - exitTime);
         NSLog(@"App delegate:");

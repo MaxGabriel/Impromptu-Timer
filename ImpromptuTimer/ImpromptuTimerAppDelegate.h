@@ -9,12 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 
+extern NSString *kApplicationStateDidChange;
 
 @interface ImpromptuTimerAppDelegate : UIResponder <UIApplicationDelegate>
 {
     double exitTime;
-    double timeSinceExit;
-
+    double timeSinceExit;    
 }
 
 @property double exitTime;

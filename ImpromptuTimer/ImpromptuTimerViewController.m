@@ -8,6 +8,7 @@
 
 #import "ImpromptuTimerViewController.h"
 
+
 @implementation ImpromptuTimerViewController
 
 @synthesize timeLabel = _timeLabel;
@@ -22,11 +23,8 @@
 @synthesize whiteLine = _whiteLine;
 @synthesize totalTime = _totalTime;
 
+#define SPEECH_TIME_IN_MIN 7
 
-//I think a better way to display the time when counting down is to do the math. 
-//Benefit of this is that I can still show the total time. 
-
-//maybe turn speak time red if it is under 4 minutes?
 
 - (void) increaseTimerCount
 {
@@ -35,9 +33,7 @@
     if (!brain)
         brain = [[TimerBrain alloc] init];
     
-    speechTimeInMin = 7;
-    
-    int speechTimeInSeconds = (speechTimeInMin*60);
+    int speechTimeInSeconds = (SPEECH_TIME_IN_MIN*60);
     
     if (countUp == YES) {
         mainDisplayCount = timerCount;
@@ -73,9 +69,13 @@
 {
     if (timerGoing == NO) {
         
+        NSTimeInterval timestamp = [[NSDate date] timeIntervalSince1970];
+        [[NSUserDefaults standardUserDefaults] setDouble:timestamp forKey:@"ImpromptuTimerStartDate"];
+        
+        
         timerStarted = YES;
         timerGoing = YES;
-        [self updateButtons];
+        [self toggleResetButton];
 
         //Switch to Stop Button Display
         [_startStopButton setTitle:@"Stop" forState:UIControlStateNormal];
@@ -100,6 +100,8 @@
 
 - (void)stopTimer 
 {
+    //[[NSUserDefaults standardUserDefaults] setDouble:0 forKey:@"ImpromptuTimerStartDate"];
+    
     if (timerGoing == YES) {
         [_startStopButton setTitle:@"Start" forState:UIControlStateNormal];
         [_startStopButton setBackgroundImage:[UIImage imageNamed:@"startTest.png"] forState: UIControlStateNormal];
@@ -111,7 +113,7 @@
 }
 
 
-//handle main display count?
+
 - (IBAction)resetTimer 
 {
     inPrep = YES;
@@ -133,7 +135,7 @@
     _prepDisplay.textColor = [UIColor whiteColor];
     _endPrepButton.titleLabel.alpha = 1;
     _endPrepButton.enabled = YES;
-    [self updateButtons];
+    [self toggleResetButton];
 
     
 }
@@ -146,14 +148,14 @@
         if (!brain)
             brain = [[TimerBrain alloc] init];
         inPrep = NO;
-        [self updateButtons];
+        [self toggleResetButton];
         countUp = NO;
         
         //Because we shift from counting down to counting up, we need to calculate the new value for display
         // 2 minutes of prep used -> 5 minutes of speaking time left
         
-        speechTimeInMin = 7; 
-        int speechTimeInSeconds = (speechTimeInMin*60);
+
+        int speechTimeInSeconds = (SPEECH_TIME_IN_MIN*60);
 //        _prepDisplay.text = _timeLabel.text;        // Pretty sure this is unncessary
         mainDisplayCount = speechTimeInSeconds - timerCount;
         _timeLabel.text = [brain convertSecondsToDisplay: mainDisplayCount];
@@ -168,25 +170,6 @@
     
 }
 
-- (void)addToCounters:(double) value
-{
-    
-    // Is the 'int toAdd' really necessary? Pretty sure I don't need it. 
-    
-    // This relates to the updating after home button
-    
-    if (timerGoing == YES) {
-        int toAdd = value;
-        timerCount += toAdd;
-        if (inPrep == YES)
-        {
-            NSLog(@"should add this to prep");
-        }    
-        else {
-            speechCount += toAdd;
-        }
-    }
-}
 
 //Generates a new quotation 
 - (IBAction)newQuote:(id)sender 
@@ -211,10 +194,29 @@
     [super viewDidUnload];
 }
 
+- (void)applicationStateDidChange:(NSNotification *)notification {
+    BOOL didResume = [[notification object] boolValue];
+    if(didResume) 
+    {
+        NSTimeInterval startTime = [[NSUserDefaults standardUserDefaults] doubleForKey:@"ImpromptuTimerStartDate"];
+        if(startTime > 0) 
+        {
+            timerCount = -(int)[[NSDate dateWithTimeIntervalSince1970:startTime] timeIntervalSinceNow];
+        }
+    } 
+    else 
+    {
+        NSTimeInterval timestamp = [[NSDate date] timeIntervalSince1970] - timerCount;
+        [[NSUserDefaults standardUserDefaults] setDouble:timestamp forKey:@"ImpromptuTimerStartDate"];
+    }
+}
+
 //Apply UI and prepare for use
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationStateDidChange:)name:kApplicationStateDidChange object:nil];
     
     self.view.backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"dark_leather.png"]];
     
@@ -229,8 +231,7 @@
     [self newQuote:(@"fix later")];
     countUp = YES;
     inPrep = YES;
-    [self updateButtons];
-    
+    [self toggleResetButton];    
     
 }
 
@@ -245,16 +246,27 @@
 }
 
 
+
+
 - (void)viewWillDisappear:(BOOL)animated
 {
-	
-    NSLog(@"test");
     [super viewWillDisappear:animated];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    NSLog(@"View Did Appear");
+    NSTimeInterval startTime = [[NSUserDefaults standardUserDefaults] doubleForKey:@"ImpromptuTimerStartDate"];
+    if (startTime > 0) {
+        timerCount = abs((int)[[NSDate dateWithTimeIntervalSince1970:startTime] timeIntervalSinceNow]) - timerCount;	
+    }
+    NSLog(@"%g",timerCount);
+    
+}
 
-//rename to 'update Reset Button' 
-- (void) updateButtons
+
+//Toggles reset button
+- (void) toggleResetButton
 {
     if (timerStarted == YES || inPrep == NO) {
         _resetButton.titleLabel.alpha = 1;

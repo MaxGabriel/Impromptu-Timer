@@ -28,11 +28,11 @@
                                     <action selector="startTimer:" destination="2" eventType="touchUpInside" id="pJq-i9-fYI"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Upf-WV-gU1">
-                                <rect key="frame" x="20" y="148" width="130" height="37"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Upf-WV-gU1">
+                                <rect key="frame" x="20" y="148" width="130" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <state key="normal" title="End Prep">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                <state key="normal" title="End Prep" backgroundImage="Normal.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -43,11 +43,11 @@
                                     <action selector="endPrep:" destination="2" eventType="touchUpInside" id="qD1-AS-w0Q"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="9YV-EU-Pek">
-                                <rect key="frame" x="20" y="376" width="105" height="37"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9YV-EU-Pek">
+                                <rect key="frame" x="20" y="376" width="130" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Next">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                <state key="normal" title="Next" backgroundImage="Normal.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -68,9 +68,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="GTl-2q-iOB">
                                 <rect key="frame" x="170" y="94" width="130" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <state key="normal" title="Reset" backgroundImage="Normal.png">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
@@ -134,10 +134,30 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Normal.png" width="161" height="47"/>
+        <image name="Normal.png" width="161" height="41"/>
         <image name="WhiteLineRounded.png" width="50" height="2"/>
         <image name="startTest.png" width="123" height="44"/>
     </resources>
+    <classes>
+        <class className="ImpromptuTimerViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ImpromptuTimerViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="endPrep:"/>
+                <relationship kind="action" name="newQuote:"/>
+                <relationship kind="action" name="startTimer:"/>
+                <relationship kind="outlet" name="background" candidateClass="UIView"/>
+                <relationship kind="outlet" name="endPrepButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="prepDisplay" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="quoteField" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="resetButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="speakDisplay" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="startStopButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="totalTime" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="whiteLine" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

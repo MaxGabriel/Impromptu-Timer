@@ -10,14 +10,17 @@
 
 @implementation QuoteBrain
 
+
+//Return a random quotation
 - (id)randomQuote
 {
     NSUInteger length = [quoteList count];
     int random;
     do {
         random = arc4random() % length;
-    } while (random == lastQuote);
-    lastQuote = random;
+    } while (random == lastQuote);          //If the random quotation is == to the lastQuotation, get a new quotation
+                                                //This solves for getting the same quote twice in a row
+    lastQuote = random;                     //Set value of random to the last quotation chosen
     return [quoteList objectAtIndex:random];
 }
 
@@ -42,6 +45,9 @@
                      @"The Framers of the Bill of Rights did not purport to \"create\" rights.  Rather, they designed the Bill of Rights to prohibit our Government from infringing rights and liberties presumed to be preexisting.  ~Justice William J. Brennan, 1982",
                      @"From beasts we scorn as soulless,\nIn forest, field and den,\nThe cry goes up to witness,\nThe soullessness of men.\n~M. Frida Hartley",
                      @"Flip a coin; you'll know what side you're hoping for. ~Arnold Rothstein (on choice)",
+                     @"Design is not just what it looks like and feels like. Design is how it works. ~Steve Jobs",
+                     @"There is no such thing as information overload, just bad design. If something is cluttered and/or confusing, fix your design. ~Edward Tufte",
+                     @"Give me six hours to chop down a tree and I will spend the first four sharpening the axe. ~Abraham Lincoln",
                      nil];
         
     }

@@ -13,11 +13,13 @@
 
 @interface ImpromptuTimerViewController : UIViewController
 {
-    int timerCount;
-    int speechCount;
-    int mainDisplayCount;
-    int speechTimeInMin;
-    BOOL timerStarted;
+    int timerCount;     //Master count incremented by starting timer; always counts up.
+    
+    int mainDisplayCount; //Largest timer Display
+    int speechCount;    //Time spent speaking (middle value in top right corner)
+    
+    
+    BOOL timerStarted; 
     BOOL timerGoing;
     TimerBrain *brain;
     QuoteBrain *quoteBrain;
@@ -25,26 +27,28 @@
     BOOL inPrep;
 }
 
-@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) NSTimer *timer;
+
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *prepDisplay;
 @property (weak, nonatomic) IBOutlet UILabel *speakDisplay;
+@property (weak, nonatomic) IBOutlet UILabel *totalTime;
+
 @property (weak, nonatomic) IBOutlet UIButton *resetButton;
 @property (weak, nonatomic) IBOutlet UIButton *startStopButton;
 @property (weak, nonatomic) IBOutlet UIButton *endPrepButton;
+
 @property (weak, nonatomic) IBOutlet UIView *background;
 @property (weak, nonatomic) IBOutlet UITextView *quoteField;
 @property (weak, nonatomic) IBOutlet UIImageView *whiteLine;
-@property (weak, nonatomic) IBOutlet UILabel *totalTime;
 
 
-- (void) increaseTimerCount;
 
-- (void) updateButtons;
+- (void)increaseTimerCount;
+
+- (void)toggleResetButton; //Modify reset button
 
 - (void)stopTimer;
-
-- (void)addToCounters:(double)value;
 
 - (IBAction)startTimer:(id)sender;
 
